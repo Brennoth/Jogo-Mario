@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    min-height: 100vh;
+}
+
+.game-board{
+    width: 100%;
+    height: 100vh;
+    border-bottom: 15px solid green;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgb(33, 255, 255) 10%,white 100%);
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 8rem; 
+    // left: 120px;
+    animation-name: animaPipe;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    @keyframes animaPipe{
+    from{
+        right: -100px;
+    }
+    to{
+        right: 100%;
+    }
+}
+}
+/*style mario e do jump*/
+.mario{
+    width: 15rem;
+    position: absolute;
+    bottom: 0;  
+}
+.jump{
+    animation-name: marioJump;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+ @keyframes marioJump {
+        0%{
+            bottom: 0;
+        }
+        40%{
+            bottom: 18rem;
+        }
+        50%{
+            bottom: 18rem;
+        }
+        60%{
+            bottom: 18rem;
+        }
+
+        100%{
+            bottom: 0;
+        }
+}   
+
+
+.clouds{
+    width: 55rem;
+    position: absolute;
+    animation-name: cloudsAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes cloudsAnimation {
+    from{
+        right: -800px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+
+.btnReset{
+    background-color: #53FF30;
+    border: none;
+    position: absolute;
+    top: 50%;
+    right: 45%;
+    padding: 1.5rem 2.5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: none;
+}
+.btnReset:hover{
+    background-color: #52ff309d;
+}
